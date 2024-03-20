@@ -1,7 +1,5 @@
 # PS99 Clan Overlay
 
-## All future updates will be released [here](https://github.com/Unity-Development/clan-overlay).
-
 Provides an overlay to assist clans in the Goal Battle.
 
 This is an electron app, so the codebase is easy to edit.
