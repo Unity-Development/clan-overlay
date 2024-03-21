@@ -25,7 +25,6 @@
       <br>
       <a id="clan">Clan Rank: #99 | Clan Points: 99</a>
       <br>
-      <button onclick="changeOverlay()" style="background-color:rgb(40,40,40);color:white;">Change Overlay</button>
       <table id="overlayzero">
         <thead>
           <tr>
@@ -57,7 +56,6 @@
           </tr>
         </tbody>
       </table>
-      <p id="overlayone" hidden></p>
     </div>
     <script>
       const clanTag = "UNTY" // your clan tag
@@ -183,40 +181,11 @@
           }).catch(error => {
             console.error('Error:', error.message);
           });
-        } else {
-          function getTopPoints(jsonInput, X) {
-            const data = jsonInput
-            // Sort users by points in descending order
-            const sortedUsers = data.sort((a, b) => b.Points - a.Points);
-            const topUsers = [];
-            // Add top X users and assign ranks
-            for (let i = 0; i < X && i < sortedUsers.length; i++) {
-              const user = sortedUsers[i];
-              topUsers.push({
-                ...user,
-                rank: i + 1
-              });
-            }
-            return topUsers;
-          }
-
-          let leaderboard = ""
-
-          getClanDetails(clanTag).then(async clanDetails => {
-            const topUsers = getTopPoints(Object.values(clanDetails.Battles)[Object.values(clanDetails.Battles).length - 1].PointContributions, 10);
-            for (const user of topUsers) {
-              const newId = await getUsernameFromId(user.UserID)
-              leaderboard += `Rank #${user.rank}: 
-																	<b>${newId.name}</b> with 
-																	<b>${user.Points}</b> ⭐
-																	<br>`
-            };
-
-            document.getElementById('overlayone').innerHTML = leaderboard
-
-          })
         }
-      }
+
+
+
+        }
     </script>
   </body>
 </html>
