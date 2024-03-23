@@ -6,7 +6,7 @@ This is an electron app, so the codebase is easy to edit.
 
 Powered by the Pet Simulator 99 API.
 
-Used by top clans such as: DRFT (#2), A2H (#3), and Unity (#6).
+Used by top clans such as: A2H (#3), Unity (#4), and PPGS (#5).
 
 To build (for Windows), run `npx electron-builder`
 
